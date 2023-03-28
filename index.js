@@ -121,10 +121,9 @@ const questions = [
   }
 ];
 
-
 inquirer.prompt(questions).then((answers) => {
-    const readmeContent = generateReadme(answers);
-    fs.writeFile('README.md', readmeContent, (err) => {
+    const generateReadme = generateReadme(answers);
+    fs.writeFile('README.md', generateReadme, (err) => {
         if (err) {
           console.log(err);
         } else {
