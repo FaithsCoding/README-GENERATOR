@@ -1,5 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateReadme = require('./generate-readme.js');
+
 
 const questions = [
   {
@@ -122,8 +124,8 @@ const questions = [
 ];
 
 inquirer.prompt(questions).then((answers) => {
-    const generateReadme = generateReadme(answers);
-    fs.writeFile('README.md', generateReadme, (err) => {
+    const readmeContent = generateReadme(answers);
+    fs.writeFile('README.md', readmeContent, (err) => {
         if (err) {
           console.log(err);
         } else {
