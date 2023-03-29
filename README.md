@@ -16,7 +16,7 @@ hello
 
 ## Technologies Used
 
-hello
+https://github.com/FaithsCoding
 
 ## Challenges Faced
 
@@ -24,20 +24,20 @@ hello
 
 ## Successes Achieved
 
-hello
+hello0
 
 ## Demo
 
-![Demo](hello)
+![Demo](https://github.com/FaithsCoding)
 
 ## Deployed Site
 
-hello
+![Deployed]hello
 
 ## Repository
 
-hello
+![Repository]()https://github.com/FaithsCoding
 
 ## Credits
 
-This project was created by hello.
+This project was created by https://github.com/FaithsCoding.

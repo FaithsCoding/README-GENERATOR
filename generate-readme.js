@@ -1,5 +1,5 @@
 function generateReadme(answers) {
-const readmeContent = `
+  const readmeContent = `
 
 # ${answers.project}
 
@@ -33,19 +33,18 @@ ${answers.successes}
 
 ## Deployed Site
 
-${answers.deployed}
+![Deployed]${answers.deployed}
 
 ## Repository
 
-${answers.repository}
+![Repository]${answers.repository}
 
 ## Credits
 
 This project was created by ${answers.creator}.
 `;
 
-    return readmeContent;
-
+  return readmeContent;
 }
 
 module.exports = generateReadme;
