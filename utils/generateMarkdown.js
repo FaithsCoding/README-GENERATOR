@@ -1,4 +1,4 @@
-//This is the function to create the Markdwon
+//This is the function to create the Markdown
 function generateMarkdown(data) {
   let markdown = `# ${data.title}
 
@@ -15,12 +15,22 @@ ${data.description}
 - [Tests](#tests)
 - [Contributing](#contributing)
 - [Questions](#questions)`;
-//The table of contents is navgational to the relevant sections
+  //The table of contents is navgational to the relevant sections
 
-  // This is an if statement making sure a section IS NOT created if none is selected
-  if (data.selectedLicense !== "none") {
+  // This creates the license section, link and badge
+  if (
+    data.selectedLicense !== "none" &&
+    typeof data.selectedLicense !== "undefined"
+  ) {
     markdown += `
-- [License](#license)`;
+   
+## License
+
+This project is licensed under the ${data.selectedLicense} license.
+
+${renderLicenseBadge(data.selectedLicense)}
+
+`;
   }
 
   markdown += `
@@ -45,26 +55,13 @@ Username: ${data.gitUsername},
 URL: ${data.gitUrl},
 You can send me any questions via email: ${data.questions}`;
 
-  // This creates the license section, link and badge
-  if (data.selectedLicense !== "none") {
-    markdown += `
-   
-## License
-
-This project is licensed under the ${data.selectedLicense} license.
-
-${renderLicenseBadge(data.selectedLicense)}
-
-`;
-  }
-
   return markdown;
 }
 
 // This function returns a license badge based on which license is passed in
 // If there is no license, this returns an empty string
 function renderLicenseBadge(selectedLicense) {
-  if (selectedLicense === "none") {
+  if (selectedLicense === "none" || typeof selectedLicense === "undefined") {
     return "";
   } else {
     return `![${selectedLicense}](https://img.shields.io/badge/LICENSE-${selectedLicense}-red)`;
@@ -74,7 +71,7 @@ function renderLicenseBadge(selectedLicense) {
 // This function returns the license link
 // If there is no license, this returns an empty string
 function renderLicenseLink(selectedLicense) {
-  if (selectedLicense === "none") {
+  if (selectedLicense === "none" || typeof selectedLicense === "undefined") {
     return "";
   } else {
     return `- [License](#license)`;
@@ -84,7 +81,7 @@ function renderLicenseLink(selectedLicense) {
 // This function returns the license section of README
 // If there is no license, this return an empty string
 function renderLicenseSection(selectedLicense) {
-  if (selectedLicense === "none") {
+  if (selectedLicense === "none" || typeof selectedLicense === "undefined") {
     return "";
   } else {
     return `## License 

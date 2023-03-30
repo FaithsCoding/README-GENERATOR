@@ -175,7 +175,7 @@ function writeToFile(fileName, data) {
 // TODO: This is a function which will initialise the app
 function init() {
   inquirer.prompt(questions).then((answers) => {
-    writeToFile("README.md", generateMarkdown(answers));
+    writeToFile("generatedREADME.md", generateMarkdown(answers));
   });
 }
 
